@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "matches",
+  "info": {
+    "singularName": "match",
+    "pluralName": "matches",
+    "displayName": "match",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "matchDate": {
+      "required": true,
+      "type": "datetime"
+    },
+    "scoreTeamA": {
+      "type": "integer"
+    },
+    "scoreTeamB": {
+      "type": "integer"
+    },
+    "matchStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Not Started",
+        "Full TIme"
+      ],
+      "required": true
+    },
+    "teamA": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::team.team"
+    },
+    "teamB": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::team.team"
+    }
+  }
+}
